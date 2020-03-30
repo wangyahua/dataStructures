@@ -5,14 +5,14 @@ package com.learn.queue;
  * @Description 数组模拟队列
  * @Date 创建于 2020-03-27 12:57
  */
-public class ArrayQueue {
+public class ArrayQueue implements Queue{
 
 
     private int front; // 队列头部
 
     private int rear; // 队列尾部
 
-    private int maxQueueSize; // 队列最大数量
+    private int maxSize; // 队列最大数量
 
     private int[] arr; // 存放数据的数组
 
@@ -24,7 +24,7 @@ public class ArrayQueue {
      */
     public ArrayQueue(int maxQueueSize) {
         this.arr = new int[maxQueueSize];
-        this.maxQueueSize = maxQueueSize;
+        this.maxSize = maxQueueSize;
         this.front = -1; // 队列的头部，代表的是队列头部的前一个位置
         this.rear = -1;
     }
@@ -37,7 +37,7 @@ public class ArrayQueue {
      */
     public boolean isFull() {
         // 比如最大队列为2   那么添加一个 rear++  0 rear++ 1   那么 1 == (2-1)
-        return rear == maxQueueSize - 1;
+        return rear == maxSize - 1;
     }
 
     /**

@@ -11,7 +11,7 @@ public class ArrayQueueDemo {
 
 
     public static void main(String[] args) {
-        ArrayQueue arrayQueue = new ArrayQueue(3);
+        Queue queue = new CircleArrayQueue(3);
         Scanner scanner = new Scanner(System.in);
         char key = ' '; // 接收用户输入的值
         boolean loop = true;
@@ -24,23 +24,23 @@ public class ArrayQueueDemo {
             key = scanner.next().charAt(0);
             switch (key) {
                 case 's':
-                    arrayQueue.showQueue();
+                    queue.showQueue();
                     break;
                 case 'a':
                     System.out.println("请输入一个数");
                     int n = scanner.nextInt();
-                    arrayQueue.addQueue(n);
+                    queue.addQueue(n);
                     break;
                 case 'g':
                     try {
-                        System.out.println("获取的数据为：" + arrayQueue.getQueue());
+                        System.out.println("获取的数据为：" + queue.getQueue());
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 'h':
                     try {
-                        System.out.println("获取的数据为：" + arrayQueue.headQueue());
+                        System.out.println("获取的数据为：" + queue.headQueue());
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
