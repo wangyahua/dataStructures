@@ -6,3 +6,5 @@
 
 [数组实现队列](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/queue/ArrayQueue.java)
 
+[数据实现环形队列](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/queue/CircleArrayQueue.java)
+
