@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 public class ArrayQueueDemo {
 
-
     public static void main(String[] args) {
         Queue queue = new CircleArrayQueue(3);
         Scanner scanner = new Scanner(System.in);

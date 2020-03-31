@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Description 环形数组队列实现
  * @Date 创建于 2020-03-30 13:20
  */
-public class CircleArrayQueue implements Queue{
+public class CircleArrayQueue implements Queue {
 
 
     private int maxSize;
@@ -63,7 +63,23 @@ public class CircleArrayQueue implements Queue{
 
 
     public void showQueue() {
-        System.out.println(Arrays.toString(arr));
+        if (isEmpty()) {
+            System.out.println("队列为空，没有数据");
+            return;
+        }
+        // 思路：从front开始遍历  遍历多少个元素
+        for (int i = front; i < front + size(); i++) {
+            System.out.printf("arr[%d]=%d\n", i % maxSize, arr[i % maxSize]);
+        }
+    }
+
+
+    public int size() {
+        // rear = 1
+        // front = 0
+        // maxSize = 4
+        // (1 + 4 - 0) % 4 = 5 % 4 = 1
+        return (rear + maxSize - front) % maxSize;
     }
 
 
