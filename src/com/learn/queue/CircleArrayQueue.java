@@ -1,7 +1,5 @@
 package com.learn.queue;
 
-import java.util.Arrays;
-
 /**
  * @author 王亚华
  * @Description 环形数组队列实现
@@ -80,6 +78,14 @@ public class CircleArrayQueue implements Queue {
         // maxSize = 4
         // (1 + 4 - 0) % 4 = 5 % 4 = 1
         return (rear + maxSize - front) % maxSize;
+    }
+
+    // 获取队尾元素。如果队列为空，返回 -1 。
+    public int rear() {
+        if (isEmpty()) {
+            return -1;
+        }
+        return rear - 1 < 0 ? arr[(arr.length - 1)] : arr[rear - 1];
     }
 
 
