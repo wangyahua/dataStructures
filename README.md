@@ -8,3 +8,7 @@
 
 [数据实现环形队列](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/queue/CircleArrayQueue.java)
 
+[单链表](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/linklist/SingleLinkedList.java)
+
+[双向链表](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/linklist/DoubleLinkedList.java)
+
