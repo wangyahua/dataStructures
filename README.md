@@ -12,3 +12,4 @@
 
 [双向链表](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/linklist/DoubleLinkedList.java)
 
+[单向环形链表](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/linklist/CircleSingleLinkedList.java)
