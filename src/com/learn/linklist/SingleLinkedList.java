@@ -58,6 +58,16 @@ public class SingleLinkedList {
 
 
     /**
+     * 合并两个链表 合并后的链表依然有序
+     * @param userNode
+     * @param userNode1
+     */
+    public void mergeByOrder(UserNode userNode, UserNode userNode1){
+
+    }
+
+
+    /**
      * 更新节点
      * @param userNode
      */
@@ -210,6 +220,9 @@ public class SingleLinkedList {
             System.out.println(stack.pop()); // 栈的特点就是先进后出的
         }
     }
+
+
+
 
 
     public void list() {
