@@ -17,13 +17,15 @@ public class Test3 {
         Number number5 = new Number(5);
 
         CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();
-        circleSingleLinkedList.add(number1);
+        /*circleSingleLinkedList.add(number1);
         circleSingleLinkedList.add(number2);
         circleSingleLinkedList.add(number3);
         circleSingleLinkedList.add(number4);
         circleSingleLinkedList.add(number5);
 
-        circleSingleLinkedList.list();
+        circleSingleLinkedList.list();*/
+
+        circleSingleLinkedList.josephus(5, 2, 2);
 
     }
 
