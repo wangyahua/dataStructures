@@ -1,5 +1,7 @@
 package com.learn.queue;
 
+import java.util.Stack;
+
 /**
  * @author 王亚华
  * @Description 数组模拟队列
