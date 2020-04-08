@@ -23,7 +23,7 @@
 [单向环形链表Josephus（约瑟夫）问题](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/linklist/CircleSingleLinkedList.java)
 
 
-##栈
+## 栈
 
 [数组模拟栈](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/stack/ArrayStack.java)
 
