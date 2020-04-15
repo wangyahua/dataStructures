@@ -99,10 +99,19 @@ public class LinkListStack<E> implements Stack<E> {
             System.out.println("栈空");
             return null;
         }
-        Object temp = first.item;
+        E temp = first.item;
         first = first.next;
         size--;
-        return (E) temp;
+        return temp;
+    }
+
+
+    public E peek(){
+        if(isEmpty()){
+            System.out.println("栈空");
+            return null;
+        }
+        return first.item;
     }
 
 
