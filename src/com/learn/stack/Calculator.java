@@ -27,6 +27,7 @@ public class Calculator {
 
 
     /**
+     * 思路分析：
      * 例如：3+2*6-2
      * -> 2              -> -
      *    12                *
@@ -36,6 +37,7 @@ public class Calculator {
      * 需要有两个栈：一个是数栈（存放数的）；一个是符号栈（存放运算符的）
      * 1. 需要进行遍历表达式，相当于遍历字符串
      * 2. 如果遍历发现是一个数字的时候，那么就进行入数栈
+     * 2.1 判断下一个是否是数字，如果是数字，那么就进行追加到一个字符的变量中，直到不是数字后继续遍历执行
      * 3. 如果是一个运算符号的时候，分以下几种情况：
      * 3.1：如果符号栈为空，那么就进行入栈。
      * 3.2：如果符号栈已经有运算符，那么就进行比较运算符，如果当前运算符小于等于栈顶的运算符的时候，将数栈中的pop出两个数并将符号栈pop出一个运算符进行运算，运算的结果再次压入数栈
@@ -43,17 +45,24 @@ public class Calculator {
      * 4. 当表达式遍历完毕，就顺序的将数栈与符号栈中pop出相应的数和运算符来进行运算。
      * 5. 最后在数栈中的最后一个数字就是结果值。
      */
+
+    /**
+     * 开始进行计算
+     *
+     * @param expression
+     * @return
+     */
     public int startCalculator(String expression) {
         if (expression == null || expression.isEmpty()) {
             throw new RuntimeException("表达式有误");
         }
-        int res = 0;
+        int res;
         for (int i = 0; i < expression.length(); i++) {
             char charAt = expression.charAt(i);
             if (isOperator(charAt)) { // 如果是运算符号
-                if (operatorStack.isEmpty()) {
+                if (operatorStack.isEmpty()) { // 如果符号栈为空，直接将符号压入符号栈中
                     operatorStack.push(charAt);
-                } else {
+                } else { // 如果符号栈不为空
                     if (getOperatorPriority(charAt) <= getOperatorPriority(operatorStack.peek())) {
                         res = cal(numStack.pop(), numStack.pop(), operatorStack.pop());
                         numStack.push(res);
@@ -63,7 +72,17 @@ public class Calculator {
                     }
                 }
             } else { // 如果不是运算符号，那么就是数字
-                numStack.push(Integer.parseInt(String.valueOf(charAt)));
+                StringBuilder numStr = new StringBuilder(String.valueOf(expression.charAt(i)));
+                // 进行判断下一个字符是否还是数字   比如 30
+                for (int j = i + 1; j < expression.length(); j++) {
+                    if (expression.charAt(j) >= 48 && expression.charAt(j) <= 57) {
+                        numStr.append(expression.charAt(j));
+                        i = j;
+                    } else {
+                        break;
+                    }
+                }
+                numStack.push(Integer.parseInt(numStr.toString()));
             }
         }
         while (!operatorStack.isEmpty()) {
@@ -134,8 +153,9 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int result = calculator.startCalculator("3+2*6-2");
-        System.out.printf("3+2*6-2=%d", result);
+        int result = calculator.startCalculator("300+2*6/2-2");
+        System.out.printf("300+2*6/2-2=%d", result);
+        //300 + 6 -2 = 304
     }
 
 }

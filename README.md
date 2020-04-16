@@ -29,6 +29,9 @@
 
 [链表模拟栈](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/stack/LinkListStack.java)
 
+[栈实现普通计算器（加减乘除）](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/stack/Calculator.java)
+
+
 
 
 
