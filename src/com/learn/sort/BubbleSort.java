@@ -46,10 +46,6 @@ public class BubbleSort {
      * @param arr
      */
     public static void doublesSort(int[] arr) {
-
-        /**
-         * 第一轮排序
-         */
         int temp;
         boolean flag = false;
         for (int i = 0; i < arr.length - 1; i++) {
@@ -69,7 +65,11 @@ public class BubbleSort {
             }
         }
 
-        /*for (int j = 0; j < arr.length - 1; j++) {
+        /**
+         * 第一轮排序
+         */
+        /*
+        for (int j = 0; j < arr.length - 1; j++) {
             // 判断是否需要进行位置交换 比大小 如果符合条件 那么就进行位置交换
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j];

@@ -37,6 +37,8 @@
 
 [冒泡排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/BubbleSort.java)
 
+[选择排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/SelectSort.java)
+
 
 
 
