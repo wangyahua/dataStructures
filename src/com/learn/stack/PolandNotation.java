@@ -29,6 +29,10 @@ public class PolandNotation {
         System.out.println(polandNotation.calculate(suffixExpressionList));
     }
 
+
+    
+
+
     /**
      * 根据后缀表达式进行运算
      * 主要实现就是将后缀表达式遍历，如果遇到数字，那么就进行入栈，遇到符号就进行pop出两个来进行运算,将运算的结果再压入栈
@@ -108,6 +112,7 @@ public class PolandNotation {
      * @return
      */
     private List<String> expressionToList(String expression) {
+        expression = replaceAllBlank(expression);
         List<String> resultList = new ArrayList<>();
         for (int i = 0; i < expression.length(); i++) {
             if (isNumber(expression.charAt(i))) { // 如果是数字
@@ -185,5 +190,9 @@ public class PolandNotation {
         return str.matches("\\d+");
     }
 
+
+    private static String replaceAllBlank(String s) {
+        return s.replaceAll("\\s+", "");
+    }
 
 }
