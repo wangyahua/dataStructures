@@ -36,6 +36,7 @@
 
 ## 递归
 [找路径（迷宫问题）](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/recursion/FindPath.java)
+[八皇后问题算法](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/recursion/Queen8.java)
 
 
 ## 排序算法
