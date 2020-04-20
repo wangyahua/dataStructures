@@ -33,6 +33,11 @@
 
 [逆波兰表达式实现计算器](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/stack/PolandNotation.java)
 
+
+## 递归
+[找路径（迷宫问题）](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/recursion/FindPath.java)
+
+
 ## 排序算法
 
 [冒泡排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/BubbleSort.java)
