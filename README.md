@@ -48,6 +48,8 @@
 
 [选择排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/SelectSort.java)
 
+[插入排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/InsertSort.java)
+
 
 
 
