@@ -20,6 +20,39 @@ public class InsertSort {
 
     /**
      * 分析
+     * 原始数组：[101, 34, 119, 1]
+     * 插入排序的思想：把n个待排序的元素看成为一个有序表和一个无序表，开始时有序表中只包含一个元素，无序表中包含n - 1个元素，排序过程中每次从无序
+     * 表中取出第一个元素，将它的排序码一次与有序元素的数据进行比较，将它插入到有序表中的适当位置，成为新的有序表。
+     * 排序思路图：
+     *
+     *          arr[0]   arr[1]  arr[2]  arr[3]
+     * 初始状态  (101)     34       119     1
+     *                    |
+     *            ________|
+     *            |
+     * 第一次插入 (34      101)     119     1
+     *                             |
+     *                             |
+     * 第二次插入 (34      101      119)    1
+     *                                    |
+     *           _________________________|
+     *           |
+     * 第三次插入 (1       34       101     119)
+     *
+     * 目前这个数组的有序数组为 [101]
+     * 无序数组为 [34, 119, 1]， 但是遍历这个数组不需要拆分为两个数组 一个即可实现：如下：
+     *
+     * 定义要待插入的数据值：
+     * int insertValue = arr[1]; // arr[1] 就是无序表中的第一个值，也就是要插入有序数组中的值
+     * int beforeIndex = 1 - 1;  // 待插入值的上一个索引
+     *
+     * 过程：
+     * [101, 34, 119, 1]
+     * [101, 101, 119, 1]
+     * [34, 101, 119, 119]
+     * [34, 101, 119, 119]
+     * [34, 34, 101, 119]
+     * [1, 34, 101, 119]
      *
      *
      *
@@ -34,8 +67,10 @@ public class InsertSort {
             beforeIndex = i - 1;
             // beforeIndex >= 0  遍历中有-- 为了防止数组越界
             // insertValue < arr[beforeIndex] 判断要插入的值 是否与前边的值小 如果小就将上一个值往后移动
+            System.out.println(Arrays.toString(arr));
             while (beforeIndex >= 0 && insertValue < arr[beforeIndex]) {
                 arr[beforeIndex + 1] = arr[beforeIndex];
+                System.out.println(Arrays.toString(arr));
                 beforeIndex--;
             }
             if (i != beforeIndex) {
