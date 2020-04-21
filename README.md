@@ -39,7 +39,7 @@
 
 [八皇后问题算法](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/recursion/Queen8.java)
 
-[八皇后问题算法递归图解](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/recursion/Queen8.java)
+[八皇后问题算法递归图解](https://github.com/wangyahua/dataStructures/blob/master/graphic/8%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%E5%9B%BE%E8%A7%A3.png)
 
 
 ## 排序算法
