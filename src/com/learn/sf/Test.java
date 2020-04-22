@@ -1,7 +1,6 @@
 package com.learn.sf;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author 王亚华
@@ -12,7 +11,7 @@ public class Test {
 
 
     public static void main(String[] args) {
-        String s = "pwwkew";
+        /*String s = "pwwkew";
         Set<Character> set = new HashSet<>();
         int maxLength = 0;
         int i;
@@ -32,8 +31,40 @@ public class Test {
                 set.add(s.charAt(i));
             }
         }
-        System.out.println(maxLength);
+        System.out.println(maxLength);*/
+
+
+        Map<String, Integer> symbol = new HashMap<>();
+
+
+        System.out.println(isValid("["));
+
     }
 
+
+    public static boolean isValid(String s) {
+        /**
+         * 有效的括号
+         */
+        boolean result = true;
+        if (s == null || s.length() == 0) return result;
+        Map<Character, Character> map = new HashMap<>();
+        map.put(']', '[');
+        map.put(')', '(');
+        map.put('}', '{');
+        Stack<Character> stack = new Stack<>();
+        for (char sc : s.toCharArray()) {
+            if (sc == '(' || sc == '{' || sc == '[') {
+                stack.push(sc);
+            } else if (stack.isEmpty() || stack.pop() != map.get(sc)) {
+                result = false;
+                break;
+            }
+        }
+        if (result) {
+            result = stack.isEmpty();
+        }
+        return result;
+    }
 
 }

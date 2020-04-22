@@ -50,6 +50,8 @@
 
 [插入排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/InsertSort.java)
 
+[希尔排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/ShellSort.java)
+
 
 
 
