@@ -11,7 +11,8 @@ public class ShellSort {
 
     public static void main(String[] args) {
         int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-        shellSort(arr);
+        // shellSort(arr); 交换法
+        shellSort2(arr); // 插入法
         System.out.println(Arrays.toString(arr));
     }
 
@@ -99,11 +100,13 @@ public class ShellSort {
         /**
          * 交换法
          */
+        int temp;
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < arr.length; i++) {
+                // 遍历各组中所有的元素
                 for (int j = i - gap; j >= 0; j -= gap) {
                     if (arr[j] > arr[j + gap]) {
-                        int temp = arr[j];
+                        temp = arr[j];
                         arr[j] = arr[j + gap];
                         arr[j + gap] = temp;
                     }
@@ -148,6 +151,37 @@ public class ShellSort {
         }
 
         System.out.println(Arrays.toString(arr));*/
+
+    }
+
+
+    public static void shellSort2(int[] arr) {
+
+        /**
+         * 插入法 优势：每次只更改一个值 找到待插入的位置插入即可，而交换法需要每次都要按个交换，效率低
+         */
+        int insertIndex;
+        int insertValue;
+
+        int gap = arr.length / 2;
+        for (; gap > 0; gap /= 2) {
+            for (int i = gap; i < arr.length; i++) {
+
+                insertIndex = i;
+                insertValue = arr[insertIndex];
+
+                while (insertIndex - gap >= 0 && insertValue < arr[insertIndex - gap]) {
+
+                    arr[insertIndex] = arr[insertIndex - gap];
+
+                    insertIndex -= gap;
+                }
+
+                // while循环退出就得到了要将待插入的value插入大指定位置
+                arr[insertIndex] = insertValue;
+
+            }
+        }
 
     }
 
