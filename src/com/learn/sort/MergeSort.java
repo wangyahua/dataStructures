@@ -132,6 +132,7 @@ public class MergeSort {
      * @param temp 中转临时数组
      */
     public static void mergeSort(int[] arr, int left, int right, int[] temp) {
+        // 递归是按照栈的数据结构执行的。先进后出
         if (left < right) {
             int mid = (left + right) / 2;
             // 向左递归进行分解
