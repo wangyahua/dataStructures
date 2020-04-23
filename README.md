@@ -54,6 +54,8 @@
 
 [快速排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/QuickSort.java)
 
+[归并排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/MergeSort.java)
+
 
 
 
