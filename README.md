@@ -52,6 +52,8 @@
 
 [希尔排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/ShellSort.java)
 
+[快速排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/QuickSort.java)
+
 
 
 
