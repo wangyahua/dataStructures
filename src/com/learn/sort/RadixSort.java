@@ -108,7 +108,7 @@ public class RadixSort {
         System.out.println("第二轮排序：" + Arrays.toString(arr));
 
 
-        //第1轮排序  针对每个元素的十位数进行排序处理
+        //第1轮排序  针对每个元素的百位数进行排序处理
         for (int i = 0; i < arr.length; i++) {
             // 取十位数
             int num = arr[i] / 100 % 10;
