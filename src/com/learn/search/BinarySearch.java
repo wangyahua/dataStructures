@@ -82,7 +82,9 @@ public class BinarySearch {
                 result.add(temp);
                 temp--;
             }
+            // 将相等的mid在左边加入完成后再加入
             result.add(mid);
+            // 向mid右扫表，将与findValue相等的下标加入到List中
             temp = mid + 1;
             while (temp < arr.length - 1 && arr[temp] == findValue) {
                 result.add(temp);
