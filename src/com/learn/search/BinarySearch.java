@@ -1,5 +1,8 @@
 package com.learn.search;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author 王亚华
  * @Description 二分查找  注：二分查找必须是有序的
@@ -9,9 +12,13 @@ public class BinarySearch {
 
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-        int resIndex = binarySearch(arr, 0, arr.length - 1, 4);
-        System.out.println("查找到的索引值为：" + resIndex);
+        //int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+        // int resIndex = binarySearch(arr, 0, arr.length - 1, 4);
+        // System.out.println("查找到的索引值为：" + resIndex);
+
+        int[] arr = {1, 8, 10, 3, 100, 100, 1234};
+        List<Integer> resIndexList = binarySearch2(arr, 0, arr.length - 1, 100);
+        System.out.println(resIndexList);
     }
 
 
@@ -35,14 +42,53 @@ public class BinarySearch {
         // 判断如果查找的值等于mid中的值，那么直接返回
         // 如果查找的值小于mid 那么就继续查找左边的数据，因为是有序的，小于mid就从左边找即可
         // 如果查找的值大于mid 那么就继续查找右边的数据，因为是有序的，大于mid就从右边找即可
-        if (arr[mid] == findValue) {
-            return mid;
-        } else if (findValue < arr[mid]) {
+        if (findValue < arr[mid]) {
             return binarySearch(arr, left, mid - 1, findValue);
         } else if (findValue > arr[mid]) {
             return binarySearch(arr, mid + 1, right, findValue);
         } else {
-            return -1;
+            return mid;
+        }
+    }
+
+
+    /**
+     * {1, 8, 10, 3, 100, 100, 1234}
+     * 二分法查找，如果数组中有多个相同的数值时，将所有的数组的下标找到 比如 100
+     *
+     * @param arr
+     * @param left
+     * @param right
+     * @param findValue
+     * @return
+     */
+    public static List<Integer> binarySearch2(int[] arr, int left, int right, int findValue) {
+        if (left > right) {
+            return new ArrayList<>();
+        }
+        int mid = (left + right) >> 1;
+        // 判断如果查找的值等于mid中的值，那么直接返回
+        // 如果查找的值小于mid 那么就继续查找左边的数据，因为是有序的，小于mid就从左边找即可
+        // 如果查找的值大于mid 那么就继续查找右边的数据，因为是有序的，大于mid就从右边找即可
+        if (findValue < arr[mid]) {
+            return binarySearch2(arr, left, mid - 1, findValue);
+        } else if (findValue > arr[mid]) {
+            return binarySearch2(arr, mid + 1, right, findValue);
+        } else {
+            List<Integer> result = new ArrayList<>();
+            // 向mid左边扫表，将与findValue相等的下标加入到List中
+            int temp = mid - 1;
+            while (temp > 0 && arr[temp] == findValue) {
+                result.add(temp);
+                temp--;
+            }
+            result.add(mid);
+            temp = mid + 1;
+            while (temp < arr.length - 1 && arr[temp] == findValue) {
+                result.add(temp);
+                temp++;
+            }
+            return result;
         }
     }
 
