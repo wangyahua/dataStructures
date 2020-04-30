@@ -65,6 +65,8 @@
 
 [二分法查找](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/search/BinarySearch.java)
 
+[插值查找](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/search/InsertValueSearch.java)
+
 
 
 
