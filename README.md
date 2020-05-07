@@ -72,4 +72,6 @@
 
 [哈希表](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/hash)
 
+[哈希表布局](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/hash/哈希表布局.png)
+
 
