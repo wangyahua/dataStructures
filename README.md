@@ -68,5 +68,8 @@
 [插值查找](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/search/InsertValueSearch.java)
 
 
+## 哈希表
+
+[哈希表](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/hash)
 
 
