@@ -59,6 +59,9 @@
 [基数排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/RadixSort.java)
 [基数排序图解](https://github.com/wangyahua/dataStructures/blob/master/graphic/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%E5%9B%BE%E8%A7%A3.png)
 
+[堆排序](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/sort/HeapSort.java)
+
+
 ## 查找算法
 
 [线性查找](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/search/SeqSearch.java)
