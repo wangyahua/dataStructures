@@ -15,6 +15,16 @@ public class TreeNode {
 
     private TreeNode right;
 
+    /**
+     * 线索二叉树使用  0代表左节点为左子树  1代表指向的就是前驱节点
+     */
+    private int leftType;
+
+    /**
+     * 线索二叉树使用  0代表右节点为右子树  1代表指向的就是后继节点
+     */
+    private int rightType;
+
     public TreeNode(int id, String name) {
         this.id = id;
         this.name = name;
@@ -82,6 +92,116 @@ public class TreeNode {
     }
 
 
+    /**
+     * 前序遍历查找
+     *
+     * @param id 要查找的id值
+     * @return
+     */
+    public TreeNode preOrderSearch(int id) {
+        if (this.id == id) {
+            return this;
+        }
+
+        // 判断当前左子节点是否为空，不为空则递归查找
+        TreeNode treeNode = null;
+
+        if (this.left != null) {
+            treeNode = this.left.preOrderSearch(id);
+        }
+
+        // 如果treeNode不为null，说明已经找到，如果为null，则判断当前节点右子节点是否为空，不为空则递归查找
+
+        if (treeNode != null) {
+            return treeNode;
+        }
+
+        if (this.right != null) {
+            treeNode = this.right.preOrderSearch(id);
+        }
+        return treeNode;
+    }
+
+
+    /**
+     * 中序遍历查找
+     *
+     * @param id 要查找的id值
+     * @return
+     */
+    public TreeNode infixOrderSearch(int id) {
+
+        TreeNode treeNode = null;
+
+        // 判断当前节点的左子节点是否为空，不为空则递归查找
+        if (this.left != null) {
+            treeNode = this.left.infixOrderSearch(id);
+        }
+
+        if (treeNode != null) {
+            return treeNode;
+        }
+
+        if (this.id == id) {
+            return this;
+        }
+
+        if (this.right != null) {
+            treeNode = this.right.infixOrderSearch(id);
+        }
+
+        return treeNode;
+    }
+
+
+    /**
+     * 后续遍历查找
+     *
+     * @param id 要查找的id值
+     * @return
+     */
+    public TreeNode postOrderSearch(int id) {
+        TreeNode treeNode = null;
+        if (this.left != null) {
+            treeNode = this.left.postOrderSearch(id);
+        }
+        if (treeNode != null) {
+            return treeNode;
+        }
+        if (this.right != null) {
+            treeNode = this.right.postOrderSearch(id);
+        }
+        if (treeNode != null) {
+            return treeNode;
+        }
+        if (this.id == id) {
+            return this;
+        }
+        return treeNode;
+    }
+
+
+    public void delNode(int id) {
+
+
+        if (this.left != null && this.left.id == id) {
+            this.left = null;
+            return;
+        }
+        if (this.right != null && this.right.id == id) {
+            this.right = null;
+            return;
+        }
+        if (this.left != null) {
+            this.left.delNode(id);
+        }
+
+        if (this.right != null) {
+            this.right.delNode(id);
+        }
+    }
+
+
     public int getId() {
         return id;
     }
@@ -114,6 +234,22 @@ public class TreeNode {
         this.right = right;
     }
 
+
+    public int getLeftType() {
+        return leftType;
+    }
+
+    public void setLeftType(int leftType) {
+        this.leftType = leftType;
+    }
+
+    public int getRightType() {
+        return rightType;
+    }
+
+    public void setRightType(int rightType) {
+        this.rightType = rightType;
+    }
 
     @Override
     public String toString() {

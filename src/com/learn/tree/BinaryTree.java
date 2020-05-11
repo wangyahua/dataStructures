@@ -23,7 +23,7 @@ public class BinaryTree {
 
         BinaryTree binaryTree = new BinaryTree();
 
-        System.out.println("前序遍历~~~");
+        /*System.out.println("前序遍历~~~");
         binaryTree.preOrder(root);
 
 
@@ -32,7 +32,22 @@ public class BinaryTree {
 
 
         System.out.println("后续遍历~~~");
+        binaryTree.postOrder(root);*/
+
+        /*System.out.println("前序遍历查找~~");
+        System.out.println(binaryTree.preOrderSearch(root, 3));
+
+        System.out.println("中序遍历查找~~");
+        System.out.println(binaryTree.infixOrderSearch(root, 3));
+
+        System.out.println("后序遍历查找~~");
+        System.out.println(binaryTree.postOrderSearch(root, 3));*/
+
+
+        binaryTree.delNode(root,3);
+
         binaryTree.postOrder(root);
+
     }
 
 
@@ -72,6 +87,66 @@ public class BinaryTree {
     public void postOrder(TreeNode root) {
         if (root != null) {
             root.postOrder();
+        } else {
+            System.out.println("二叉树为空，不能遍历");
+        }
+    }
+
+
+    /**
+     * 使用前序遍历查找指定节点
+     *
+     * @param root
+     * @param id
+     * @return
+     */
+    public TreeNode preOrderSearch(TreeNode root, int id) {
+        if (root != null) {
+            return root.preOrderSearch(id);
+        } else {
+            System.out.println("二叉树为空，不能遍历");
+            return null;
+        }
+    }
+
+
+    /**
+     * 使用中序遍历查找指定节点
+     *
+     * @param root
+     * @param id
+     * @return
+     */
+    public TreeNode infixOrderSearch(TreeNode root, int id) {
+        if (root != null) {
+            return root.infixOrderSearch(id);
+        } else {
+            System.out.println("二叉树为空，不能遍历");
+            return null;
+        }
+    }
+
+
+    /**
+     * 使用后续遍历查找指定节点
+     *
+     * @param root
+     * @param id
+     * @return
+     */
+    public TreeNode postOrderSearch(TreeNode root, int id) {
+        if (root != null) {
+            return root.postOrderSearch(id);
+        } else {
+            System.out.println("二叉树为空，不能遍历");
+            return null;
+        }
+    }
+
+
+    public void delNode(TreeNode root, int id){
+        if (root != null) {
+            root.delNode(id);
         } else {
             System.out.println("二叉树为空，不能遍历");
         }

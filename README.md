@@ -78,3 +78,6 @@
 
 [前序、中序、后序遍历](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/tree/TreeNode.java)
 
+[顺序二叉树](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/tree/ArrBinaryTree.java)
+
+[线索化二叉树](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/tree/ThreadedBinaryTree.java)
