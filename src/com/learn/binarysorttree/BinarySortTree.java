@@ -9,11 +9,11 @@ package com.learn.binarysorttree;
  * [7, 3, 10, 12, 5, 1, 9]
  * 对应的二叉排序树：
  * <p>
- * 7
- * ／   ＼
- * 3     10
- * ／ ＼   ／ ＼
- * 1  5   9  12
+ *        7
+ *     ／   ＼
+ *    3     10
+ *  ／ ＼   ／ ＼
+ *  1  5   9  12
  * @Date 创建于 2020-05-12 21:22
  */
 public class BinarySortTree {
