@@ -13,6 +13,30 @@ public class Node {
 
     private Node right;
 
+    public Node getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public void setRight(Node right) {
+        this.right = right;
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
     public Node(int val) {
         this.val = val;
     }
@@ -66,7 +90,49 @@ public class Node {
         if (this.right != null) {
             this.right.infixOrder();
         }
+    }
 
+
+    /**
+     * 根据值查找到当前的节点
+     *
+     * @param val
+     * @return
+     */
+    public Node search(int val) {
+        if (this.val == val) {
+            return this;
+        } else if (val < this.val) { // 如果查找的值小于当前节点，那么向左子树递归查找
+            if (this.left == null) {
+                return null;
+            }
+            return this.left.search(val);
+        } else { // 如果查找的值大于当前节点，那么向右子树递归查找
+            if (this.right == null) {
+                return null;
+            }
+            return this.right.search(val);
+        }
+    }
+
+
+    /**
+     * 根据值查找节点的父节点
+     *
+     * @param val
+     * @return
+     */
+    public Node searchParent(int val) {
+        // 如果当前节点的左子节点或者右子节点等于查找的值，那么当前节点就是父节点
+        if ((this.left != null && this.left.val == val) || (this.right != null && this.right.val == val)) {
+            return this;
+        } else if (val < this.val && this.left != null) {
+            return this.left.searchParent(val); // 向左子树递归查找
+        } else if (val >= this.val && this.right != null) {
+            return this.right.searchParent(val); // 向右子树递归查找
+        } else {
+            return null;
+        }
     }
 
 }
