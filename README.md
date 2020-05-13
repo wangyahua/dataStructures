@@ -85,4 +85,4 @@
 
 [线索化二叉树](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/tree/ThreadedBinaryTree.java)
 
-[二叉排序树](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/tree/BinarySortTree.java)
+[二叉排序树](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/binarysorttree/BinarySortTree.java)
