@@ -95,5 +95,5 @@
 
 # 常用算法
 
-[二分法查找算法](https://github.com/wangyahua/dataStructures/blob/master/src/com.learn.algorithm/BinarySearchNoRecur.java)
+[二分法查找算法](https://github.com/wangyahua/dataStructures/blob/master/src/com/learn/algorithm/BinarySearchNoRecur.java)
 
